@@ -31,6 +31,23 @@
       return (xd * xd + yd * yd) <= (rs * rs);
     },
     /**
+     * Determines if a point is within a circle
+     *
+     * @param {Object} c
+     * @param {Object} p
+     * @returns {boolean}
+     */
+    'intersectPoint': function (c, p) {
+
+      if (c['r'] === 0)
+        return false;
+
+      var xd = c['x'] - p['x'];
+      var yd = c['y'] - p['y'];
+      
+      return (xd * xd + yd * yd) <= (c['r'] * c['r']);
+    },
+    /**
      * Calculates the intersection points of two circles
      *
      * @see http://www.xarg.org/2016/07/calculate-the-intersection-points-of-two-circles/
