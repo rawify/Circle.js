@@ -1,0 +1,30 @@
+{
+    "name": "circle",
+    "title": "circle.js",
+    "version": "0.0.1",
+    "homepage": "https://github.com/infusion/Circle.js",
+    "bugs": "https://github.com/infusion/Circle.js/issues",
+    "description": "A function collection for working with circles",
+    "keywords": ["circle", "circles", "intersection", "area", "perimeter"],
+    "author": "Robert Eisele <robert@xarg.org> (http://www.xarg.org/)",
+    "main": "circle",
+    "private": false,
+    "readmeFilename": "README.md",
+    "license": "MIT OR GPL-2.0",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/infusion/Circle.js.git"
+    },
+    "engines": {
+        "node": "*"
+    },
+    "scripts": {
+        "test": "mocha tests/*.js"
+    },
+    "devDependencies": {
+        "mocha": "*",
+        "should": "*",
+        "gulp": "*",
+        "google-closure-compiler": "*"
+    }
+}
