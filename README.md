@@ -18,9 +18,9 @@ Examples
 var circle = require('circle.js');
 var A = {x: 20, y: 20, r: 10};
 var B = {x: 80, y: 80, r: 30};
-if (rect.intersect(A, B)) {
-  console.log(rect.intersection(A, B)); // Intersection points
-  console.log(rect.intersectionArea(A, B)); // Intersection area
+if (circle.intersect(A, B)) {
+  console.log(circle.intersection(A, B)); // Intersection points
+  console.log(circle.intersectionArea(A, B)); // Intersection area
 } else {
   console.log("no intersection");
 }
