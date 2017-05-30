@@ -75,7 +75,7 @@ bower install circle
 or
 
 ```
-npm install --save circle.js
+npm install circle.js
 ```
 
 
