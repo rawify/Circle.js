@@ -64,32 +64,24 @@
         var x = (A['r'] * A['r'] - B['r'] * B['r'] + d * d) / (2 * d);
         var y = Math.sqrt(A['r'] * A['r'] - x * x);
 
-        if (A['r'] < Math.abs(x)) {
+        var eX = (B['x'] - A['x']) / d;
+        var eY = (B['y'] - A['y']) / d;
 
-          // No intersection, one circle is in the other
-          return null;
+        var P1 = {
+          'x': A['x'] + x * eX - y * eY,
+          'y': A['y'] + x * eY + y * eX
+        };
 
-        } else {
+        var P2 = {
+          'x': A['x'] + x * eX + y * eY,
+          'y': A['y'] + x * eY - y * eX
+        };
 
-          var eX = (B['x'] - A['x']) / d;
-          var eY = (B['y'] - A['y']) / d;
-
-          var P1 = {
-            'x': A['x'] + x * eX - y * eY,
-            'y': A['y'] + x * eY + y * eX
-          };
-
-          var P2 = {
-            'x': A['x'] + x * eX + y * eY,
-            'y': A['y'] + x * eY - y * eX
-          };
-
-          return [P1, P2];
-        }
+        return [P1, P2];
 
       } else {
 
-        // No Intersection, far outside
+        // No Intersection, far outside or one circle is in the other
         return null;
       }
     },
