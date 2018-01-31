@@ -59,7 +59,7 @@
 
       var d = Math.hypot(B['x'] - A['x'], B['y'] - A['y']);
 
-      if (d <= A['r'] + B['r']) {
+      if (d <= A['r'] + B['r'] && d >= Math.abs(B['r'] - A['r'])) {
 
         var x = (A['r'] * A['r'] - B['r'] * B['r'] + d * d) / (2 * d);
         var y = Math.sqrt(A['r'] * A['r'] - x * x);
@@ -81,7 +81,7 @@
 
       } else {
 
-        // No Intersection, far outside or one circle is in the other
+        // No Intersection, far outside or one circle is inside the other
         return null;
       }
     },
