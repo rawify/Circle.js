@@ -5,6 +5,7 @@ var circle = require('../circle.js');
 var tests = [
   {m: 'intersect', p: [{x: 20, y: 20, r: 10}, {x: 30, y: 20, r: 15}], r: true},
   {m: 'intersect', p: [{x: -20, y: 20, r: 10}, {x: 30, y: 20, r: 15}], r: false},
+  {m: 'intersect', p: [{x: 0, y: 0, r: 1}, {x: 2, y: 0, r: 4}], r: true},
   {m: 'perimeter', p: [{x: 20, y: 20, r: 10}], r: 20 * Math.PI}
 ];
 

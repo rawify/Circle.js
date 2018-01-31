@@ -1,5 +1,5 @@
 /**
- * @license Circle.js v0.0.1 08/04/2016
+ * @license Circle.js v0.0.3 08/04/2016
  *
  * Copyright (c) 2016, Robert Eisele (robert@xarg.org)
  * Dual licensed under the MIT or GPL Version 2 licenses.
@@ -44,7 +44,7 @@
 
       var xd = c['x'] - p['x'];
       var yd = c['y'] - p['y'];
-      
+
       return (xd * xd + yd * yd) <= (c['r'] * c['r']);
     },
     /**

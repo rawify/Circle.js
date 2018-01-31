@@ -1,11 +1,17 @@
 {
     "name": "circle.js",
     "title": "circle.js",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "homepage": "https://github.com/infusion/Circle.js",
     "bugs": "https://github.com/infusion/Circle.js/issues",
     "description": "A function collection for working with circles",
-    "keywords": ["circle", "circles", "intersection", "area", "perimeter"],
+    "keywords": [
+        "circle",
+        "circles",
+        "intersection",
+        "area",
+        "perimeter"
+    ],
     "author": "Robert Eisele <robert@xarg.org> (http://www.xarg.org/)",
     "main": "circle",
     "private": false,
