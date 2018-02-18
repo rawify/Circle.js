@@ -10,7 +10,8 @@
         "circles",
         "intersection",
         "area",
-        "perimeter"
+        "perimeter",
+        "circle from three points"
     ],
     "author": "Robert Eisele <robert@xarg.org> (http://www.xarg.org/)",
     "main": "circle",
