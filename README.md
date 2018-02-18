@@ -65,6 +65,10 @@ insetBy(a)
 ---
 Resizes the circle by a given value on the center
 
+fromThreePoints(p1, p2, p3)
+---
+Caclulates a circle {x, y, r} with given three {x, y} points
+
 Installation
 ===
 Installing Circle.js is as easy as cloning this repo or use one of the following commands:

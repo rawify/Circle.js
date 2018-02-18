@@ -1,15 +1,15 @@
 /**
- * @license Circle.js v0.0.3 08/04/2016
+ * @license Circle.js v0.0.4 08/04/2016
  *
  * Copyright (c) 2016, Robert Eisele (robert@xarg.org)
  * Dual licensed under the MIT or GPL Version 2 licenses.
  **/
 
-(function (root) {
+(function(root) {
 
   'use strict';
 
-  Math['hypot'] = Math['hypot'] || function (a, b) {
+  Math['hypot'] = Math['hypot'] || function(a, b) {
 
     return Math.sqrt(a * a + b * b);
   };
@@ -22,7 +22,7 @@
      * @param {Object} b
      * @returns {boolean}
      */
-    'intersect': function (a, b) {
+    'intersect': function(a, b) {
 
       var xd = a['x'] - b['x'];
       var yd = a['y'] - b['y'];
@@ -37,7 +37,7 @@
      * @param {Object} p
      * @returns {boolean}
      */
-    'intersectPoint': function (c, p) {
+    'intersectPoint': function(c, p) {
 
       if (c['r'] === 0)
         return false;
@@ -55,7 +55,7 @@
      * @param {Object} B
      * @returns {Object}
      */
-    'intersection': function (A, B) {
+    'intersection': function(A, B) {
 
       var d = Math.hypot(B['x'] - A['x'], B['y'] - A['y']);
 
@@ -93,7 +93,7 @@
      * @param {Object} B
      * @returns {number}
      */
-    'intersectionArea': function (A, B) {
+    'intersectionArea': function(A, B) {
 
       var d = Math.hypot(B['x'] - A['x'], B['y'] - A['y']);
 
@@ -119,7 +119,7 @@
      * @param {Object} c
      * @returns {number}
      */
-    'area': function (c) {
+    'area': function(c) {
 
       return Math.PI * c['r'] * c['r'];
     },
@@ -129,7 +129,7 @@
      * @param {Object} a
      * @returns {number}
      */
-    'height': function (a) {
+    'height': function(a) {
 
       return 2 * a['r'];
     },
@@ -139,7 +139,7 @@
      * @param {Object} a
      * @returns {number}
      */
-    'width': function (a) {
+    'width': function(a) {
 
       return 2 * a['r'];
     },
@@ -149,7 +149,7 @@
      * @param {Object} a
      * @returns {number}
      */
-    'perimeter': function (a) {
+    'perimeter': function(a) {
 
       return 2 * Math.PI * a['r'];
     },
@@ -159,7 +159,7 @@
      * @param {Object} a
      * @returns {Object}
      */
-    'center': function (a) {
+    'center': function(a) {
 
       return {
         'x': a['x'],
@@ -173,18 +173,55 @@
      * @param {number} w
      * @returns {Object}
      */
-    'insetBy': function (c, w) {
+    'insetBy': function(c, w) {
 
       return {
         'x': c['x'],
         'y': c['y'],
         'r': Math.max(0, c['r'] - w)
       };
+    },
+    /**
+     * Caclulates a circle given three points
+     * 
+     * @see https://www.xarg.org/2018/02/create-a-circle-out-of-three-points/
+     * @param {number} p1
+     * @param {number} p2
+     * @param {number} p3
+     * @returns {Object}
+     */
+    'fromThreePoints': function(p1, p2, p3) {
+
+      var x1 = p1['x'];
+      var y1 = p1['y'];
+      var x2 = p2['x'];
+      var y2 = p2['y'];
+      var x3 = p3['x'];
+      var y3 = p3['y'];
+
+      var a = x1 * (y2 - y3) - y1 * (x2 - x3) + x2 * y3 - x3 * y2;
+
+      var b = (x1 * x1 + y1 * y1) * (y3 - y2)
+              + (x2 * x2 + y2 * y2) * (y1 - y3)
+              + (x3 * x3 + y3 * y3) * (y2 - y1);
+
+      var c = (x1 * x1 + y1 * y1) * (x2 - x3)
+              + (x2 * x2 + y2 * y2) * (x3 - x1)
+              + (x3 * x3 + y3 * y3) * (x1 - x2);
+
+      var x = -b / (2 * a);
+      var y = -c / (2 * a);
+
+      return {
+        x: x,
+        y: y,
+        r: Math.hypot(x - x1, y - y1)
+      };
     }
   };
 
   if (typeof define === 'function' && define['amd']) {
-    define([], function () {
+    define([], function() {
       return Circle;
     });
   } else if (typeof exports === 'object') {
