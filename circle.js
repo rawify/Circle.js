@@ -14,7 +14,7 @@
     return Math.sqrt(a * a + b * b);
   };
 
-  var Circle = {
+  const Circle = {
     /**
      * Determines if two circles intersect
      *
@@ -24,9 +24,9 @@
      */
     'intersect': function(a, b) {
 
-      var xd = a['x'] - b['x'];
-      var yd = a['y'] - b['y'];
-      var rs = a['r'] + b['r'];
+      const xd = a['x'] - b['x'];
+      const yd = a['y'] - b['y'];
+      const rs = a['r'] + b['r'];
 
       return (xd * xd + yd * yd) <= (rs * rs);
     },
@@ -42,8 +42,8 @@
       if (c['r'] === 0)
         return false;
 
-      var xd = c['x'] - p['x'];
-      var yd = c['y'] - p['y'];
+      const xd = c['x'] - p['x'];
+      const yd = c['y'] - p['y'];
 
       return (xd * xd + yd * yd) <= (c['r'] * c['r']);
     },
@@ -57,22 +57,22 @@
      */
     'intersection': function(A, B) {
 
-      var d = Math.hypot(B['x'] - A['x'], B['y'] - A['y']);
+      const d = Math.hypot(B['x'] - A['x'], B['y'] - A['y']);
 
       if (d <= A['r'] + B['r'] && d >= Math.abs(B['r'] - A['r'])) {
 
-        var x = (A['r'] * A['r'] - B['r'] * B['r'] + d * d) / (2 * d);
-        var y = Math.sqrt(A['r'] * A['r'] - x * x);
+        const x = (A['r'] * A['r'] - B['r'] * B['r'] + d * d) / (2 * d);
+        const y = Math.sqrt(A['r'] * A['r'] - x * x);
 
-        var eX = (B['x'] - A['x']) / d;
-        var eY = (B['y'] - A['y']) / d;
+        const eX = (B['x'] - A['x']) / d;
+        const eY = (B['y'] - A['y']) / d;
 
-        var P1 = {
+        const P1 = {
           'x': A['x'] + x * eX - y * eY,
           'y': A['y'] + x * eY + y * eX
         };
 
-        var P2 = {
+        const P2 = {
           'x': A['x'] + x * eX + y * eY,
           'y': A['y'] + x * eY - y * eX
         };
@@ -95,16 +95,16 @@
      */
     'intersectionArea': function(A, B) {
 
-      var d = Math.hypot(B['x'] - A['x'], B['y'] - A['y']);
+      const d = Math.hypot(B['x'] - A['x'], B['y'] - A['y']);
 
       if (d <= A['r'] + B['r']) {
 
-        var a = A['r'] * A['r'];
-        var b = B['r'] * B['r'];
+        const a = A['r'] * A['r'];
+        const b = B['r'] * B['r'];
 
-        var x = (a - b + d * d) / (2 * d);
-        var z = x * x;
-        var y = Math.sqrt(a - z);
+        const x = (a - b + d * d) / (2 * d);
+        const z = x * x;
+        const y = Math.sqrt(a - z);
 
         if (d < Math.abs(B['r'] - A['r'])) {
           return Math.PI * Math.min(a, b);
@@ -192,25 +192,25 @@
      */
     'fromThreePoints': function(p1, p2, p3) {
 
-      var x1 = p1['x'];
-      var y1 = p1['y'];
-      var x2 = p2['x'];
-      var y2 = p2['y'];
-      var x3 = p3['x'];
-      var y3 = p3['y'];
+      const x1 = p1['x'];
+      const y1 = p1['y'];
+      const x2 = p2['x'];
+      const y2 = p2['y'];
+      const x3 = p3['x'];
+      const y3 = p3['y'];
 
-      var a = x1 * (y2 - y3) - y1 * (x2 - x3) + x2 * y3 - x3 * y2;
+      const a = x1 * (y2 - y3) - y1 * (x2 - x3) + x2 * y3 - x3 * y2;
 
-      var b = (x1 * x1 + y1 * y1) * (y3 - y2)
+      const b = (x1 * x1 + y1 * y1) * (y3 - y2)
               + (x2 * x2 + y2 * y2) * (y1 - y3)
               + (x3 * x3 + y3 * y3) * (y2 - y1);
 
-      var c = (x1 * x1 + y1 * y1) * (x2 - x3)
+      const c = (x1 * x1 + y1 * y1) * (x2 - x3)
               + (x2 * x2 + y2 * y2) * (x3 - x1)
               + (x3 * x3 + y3 * y3) * (x1 - x2);
 
-      var x = -b / (2 * a);
-      var y = -c / (2 * a);
+      const x = -b / (2 * a);
+      const y = -c / (2 * a);
 
       return {
         x: x,
