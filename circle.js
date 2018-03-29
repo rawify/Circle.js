@@ -1,5 +1,5 @@
 /**
- * @license Circle.js v0.0.6 08/04/2016
+ * @license Circle.js v0.0.7 08/04/2016
  *
  * Copyright (c) 2016, Robert Eisele (robert@xarg.org)
  * Dual licensed under the MIT or GPL Version 2 licenses.
@@ -226,9 +226,9 @@
     });
   } else if (typeof exports === 'object') {
     Object.defineProperty(exports, "__esModule", {'value': true});
+    Circle['default'] = Circle;
+    Circle['Circle'] = Circle;
     module['exports'] = Circle;
-    exports['Angles'] = Circle;
-    exports['default'] = Circle;
   } else {
     root['Circle'] = Circle;
   }
