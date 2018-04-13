@@ -1,7 +1,7 @@
 {
     "name": "circle.js",
     "title": "circle.js",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "homepage": "https://github.com/infusion/Circle.js",
     "bugs": "https://github.com/infusion/Circle.js/issues",
     "description": "A function collection for working with circles",

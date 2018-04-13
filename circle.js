@@ -1,5 +1,5 @@
 /**
- * @license Circle.js v0.0.8 08/04/2016
+ * @license Circle.js v0.0.9 08/04/2016
  *
  * Copyright (c) 2016, Robert Eisele (robert@xarg.org)
  * Dual licensed under the MIT or GPL Version 2 licenses.
