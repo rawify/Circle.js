@@ -106,7 +106,7 @@
         var z = x * x;
         var y = Math.sqrt(a - z);
 
-        if (d < Math.abs(B['r'] - A['r'])) {
+        if (d <= Math.abs(B['r'] - A['r'])) {
           return Math.PI * Math.min(a, b);
         }
         return a * Math.asin(y / A['r']) + b * Math.asin(y / B['r']) - y * (x + Math.sqrt(z + b - a));
