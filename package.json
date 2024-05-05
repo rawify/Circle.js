@@ -13,11 +13,11 @@
         "perimeter",
         "circle from three points"
     ],
-    "author": "Robert Eisele <robert@xarg.org> (http://www.xarg.org/)",
+    "author": "Robert Eisele <robert@raw.org> (https://raw.org/)",
     "main": "circle",
     "private": false,
     "readmeFilename": "README.md",
-    "license": "MIT OR GPL-2.0",
+    "license": "MIT",
     "repository": {
         "type": "git",
         "url": "git://github.com/infusion/Circle.js.git"
