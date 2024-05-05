@@ -1,7 +1,7 @@
 /**
  * @license Circle.js v0.0.9 08/04/2016
  *
- * Copyright (c) 2016, Robert Eisele (robert@xarg.org)
+ * Copyright (c) 2016, Robert Eisele (raw.org)
  * Dual licensed under the MIT or GPL Version 2 licenses.
  **/
 
@@ -50,7 +50,7 @@
     /**
      * Calculates the intersection points of two circles
      *
-     * @see http://www.xarg.org/2016/07/calculate-the-intersection-points-of-two-circles/
+     * @see https://raw.org/math/calculate-the-intersection-points-of-two-circles/
      * @param {Object} A
      * @param {Object} B
      * @returns {Object}
@@ -88,7 +88,7 @@
     /**
      * Calculates the intersection area of two circles
      *
-     * @see http://www.xarg.org/2016/07/calculate-the-intersection-area-of-two-circles/
+     * @see https://raw.org/math/calculate-the-intersection-area-of-two-circles/
      * @param {Object} A
      * @param {Object} B
      * @returns {number}
@@ -184,7 +184,7 @@
     /**
      * Caclulates a circle given three points
      * 
-     * @see https://www.xarg.org/2018/02/create-a-circle-out-of-three-points/
+     * @see https://raw.org/math/create-a-circle-out-of-three-points/
      * @param {number} p1
      * @param {number} p2
      * @param {number} p3
