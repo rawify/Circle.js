@@ -1,8 +1,8 @@
 /**
- * @license Circle.js v0.0.9 08/04/2016
+ * @license Circle.js v0.0.10 08/04/2016
  *
  * Copyright (c) 2016, Robert Eisele (raw.org)
- * Dual licensed under the MIT or GPL Version 2 licenses.
+ * Licensed under the MIT license.
  **/
 
 (function(root) {
@@ -95,21 +95,22 @@
      */
     'intersectionArea': function(A, B) {
 
-      var d = Math.hypot(B['x'] - A['x'], B['y'] - A['y']);
+      var dd = Math.pow(B['x'] - A['x'], 2) + Math.pow(B['y'] - A['y'], 2);
+      var d = Math.sqrt(dd);
 
       if (d <= A['r'] + B['r']) {
 
-        var a = A['r'] * A['r'];
-        var b = B['r'] * B['r'];
-
-        var x = (a - b + d * d) / (2 * d);
-        var z = x * x;
-        var y = Math.sqrt(a - z);
-
         if (d <= Math.abs(B['r'] - A['r'])) {
-          return Math.PI * Math.min(a, b);
+          return Math.PI * Math.min(Arr, Brr);
         }
-        return a * Math.asin(y / A['r']) + b * Math.asin(y / B['r']) - y * (x + Math.sqrt(z + b - a));
+
+        var Arr = A['r'] * A['r'];
+        var Brr = B['r'] * B['r'];
+
+        var t1 = 2 * Math.acos((Arr + dd - Brr) / (2 * d * A['r']));
+        var t2 = 2 * Math.acos((Brr + dd - Arr) / (2 * d * B['r']));
+
+        return 0.5 * (Arr * (t1 - Math.sin(t1)) + Brr * (t2 - Math.sin(t2)));
       }
       return 0;
     },
@@ -202,12 +203,12 @@
       var a = x1 * (y2 - y3) - y1 * (x2 - x3) + x2 * y3 - x3 * y2;
 
       var b = (x1 * x1 + y1 * y1) * (y3 - y2)
-              + (x2 * x2 + y2 * y2) * (y1 - y3)
-              + (x3 * x3 + y3 * y3) * (y2 - y1);
+            + (x2 * x2 + y2 * y2) * (y1 - y3)
+            + (x3 * x3 + y3 * y3) * (y2 - y1);
 
       var c = (x1 * x1 + y1 * y1) * (x2 - x3)
-              + (x2 * x2 + y2 * y2) * (x3 - x1)
-              + (x3 * x3 + y3 * y3) * (x1 - x2);
+            + (x2 * x2 + y2 * y2) * (x3 - x1)
+            + (x3 * x3 + y3 * y3) * (x1 - x2);
 
       var x = -b / (2 * a);
       var y = -c / (2 * a);
@@ -225,7 +226,7 @@
       return Circle;
     });
   } else if (typeof exports === 'object') {
-    Object.defineProperty(Circle, "__esModule", {'value': true});
+    Object.defineProperty(Circle, "__esModule", { 'value': true });
     Circle['default'] = Circle;
     Circle['Circle'] = Circle;
     module['exports'] = Circle;
