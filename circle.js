@@ -1,7 +1,7 @@
 /**
- * @license Circle.js v0.0.10 08/04/2016
+ * @license Circle.js v0.1.0 05/06/2024
  *
- * Copyright (c) 2016, Robert Eisele (raw.org)
+ * Copyright (c) 2024, Robert Eisele (raw.org)
  * Licensed under the MIT license.
  **/
 
@@ -100,12 +100,12 @@
 
       if (d <= A['r'] + B['r']) {
 
+        var Arr = A['r'] * A['r'];
+        var Brr = B['r'] * B['r'];
+
         if (d <= Math.abs(B['r'] - A['r'])) {
           return Math.PI * Math.min(Arr, Brr);
         }
-
-        var Arr = A['r'] * A['r'];
-        var Brr = B['r'] * B['r'];
 
         var t1 = 2 * Math.acos((Arr + dd - Brr) / (2 * d * A['r']));
         var t2 = 2 * Math.acos((Brr + dd - Arr) / (2 * d * B['r']));
