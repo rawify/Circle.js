@@ -1,7 +1,6 @@
 # Circle.js
 
 [![NPM Package](https://img.shields.io/npm/v/circle.js.svg?style=flat)](https://npmjs.org/package/circle.js "View this project on npm")
-[![Build Status](https://travis-ci.org/infusion/Circle.js.svg)](https://travis-ci.org/infusion/Circle.js)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 
@@ -11,13 +10,15 @@ Every circle is defined by a cartesian point `(x, y)` and the radius `r`.
 
 Circles.js is analogous to [Rectangles.js](https://github.com/infusion/Rectangles.js) and [Angles.js](https://github.com/infusion/Angles.js).
 
-Examples
-===
+## Examples
+
 
 ```javascript
-var circle = require('circle.js');
-var A = {x: 20, y: 20, r: 10};
-var B = {x: 80, y: 80, r: 30};
+const circle = require('circle.js');
+
+const A = {x: 20, y: 20, r: 10};
+const B = {x: 80, y: 80, r: 30};
+
 if (circle.intersect(A, B)) {
   console.log(circle.intersection(A, B)); // Intersection points
   console.log(circle.intersectionArea(A, B)); // Intersection area
@@ -26,8 +27,8 @@ if (circle.intersect(A, B)) {
 }
 ```
 
-Functions
-===
+## Functions
+
 
 intersect(a, b)
 ---
@@ -69,54 +70,48 @@ fromThreePoints(p1, p2, p3)
 ---
 Caclulates a circle {x, y, r} with given three {x, y} points
 
-Installation
-===
-Installing Circle.js is as easy as cloning this repo or use one of the following commands:
+## Installation
 
-```
-bower install circle
-```
-or
+Installing Circle.js is as easy as cloning this repo or use one of the following command:
 
 ```
 npm install circle.js
 ```
 
 
-Using Circle.js with the browser
-===
+## Using Circle.js with the browser
+
 ```html
-<script src="circle.js"></script>
+<script src="circle.min.js"></script>
 <script>
 console.log(Circle.center(A));
 </script>
 ```
 
-Using Circle.js with require.js
-===
-```html
-<script src="require.js"></script>
-<script>
-requirejs(['circle.js'],
-function(Circle) {
-    console.log(Circle.intersectionArea(A, B));
-});
-</script>
-```
 
-Coding Style
-===
+
+## Coding Style
+
 As every library I publish, Circle.js is also built to be as small as possible after compressing it with Google Closure Compiler in advanced mode. Thus the coding style orientates a little on maxing-out the compression rate. Please make sure you keep this style if you plan to extend the library.
 
-Testing
-===
-If you plan to enhance the library, make sure you add test cases and all the previous tests are passing. You can test the library with
+## Building the library
+
+After cloning the Git repository run:
 
 ```
-npm test
+npm install
+npm run build
 ```
 
-Copyright and licensing
-===
-Copyright (c) 2016, [Robert Eisele](https://raw.org/)
+## Run a test
+
+Testing the source against the shipped test suite is as easy as
+
+```
+npm run test
+```
+
+## Copyright and licensing
+
+Copyright (c) 2025, [Robert Eisele](https://raw.org/)
 Licensed under the MIT license.

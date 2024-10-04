@@ -1,9 +1,9 @@
 {
     "name": "circle.js",
-    "title": "circle.js",
-    "version": "0.1.0",
-    "homepage": "https://github.com/infusion/Circle.js",
-    "bugs": "https://github.com/infusion/Circle.js/issues",
+    "title": "Circle.js",
+    "version": "0.2.0",
+    "homepage": "https://github.com/rawify/Circle.js",
+    "bugs": "https://github.com/rawify/Circle.js/issues",
     "description": "A function collection for working with circles",
     "keywords": [
         "circle",
@@ -13,25 +13,47 @@
         "perimeter",
         "circle from three points"
     ],
-    "author": "Robert Eisele <robert@raw.org> (https://raw.org/)",
-    "main": "circle",
     "private": false,
+    "main": "./dist/circle.js",
+    "module": "./dist/circle.mjs",
+    "types": "./circle.d.ts",
+    "browser": "./dist/circle.min.js",
+    "unpkg": "./dist/circle.min.js",
     "readmeFilename": "README.md",
-    "license": "MIT",
+    "exports": {
+        ".": {
+            "types": "./circle.d.ts",
+            "require": "./dist/circle.js",
+            "import": "./dist/circle.mjs"
+        }
+    },
     "repository": {
         "type": "git",
-        "url": "git://github.com/infusion/Circle.js.git"
+        "url": "git@github.com:rawify/Circle.js.git"
     },
+    "funding": {
+        "type": "github",
+        "url": "https://github.com/sponsors/rawify"
+    },
+    "author": {
+        "name": "Robert Eisele",
+        "email": "robert@raw.org",
+        "url": "https://raw.org/"
+    },
+    "license": "MIT",
     "engines": {
         "node": "*"
     },
+    "directories": {
+        "test": "tests"
+    },
     "scripts": {
+        "build": "crude-build Circle",
         "test": "mocha tests/*.js"
     },
     "devDependencies": {
+        "crude-build": "^0.0.1",
         "mocha": "*",
-        "should": "*",
-        "gulp": "*",
-        "google-closure-compiler": "*"
+        "should": "*"
     }
 }
