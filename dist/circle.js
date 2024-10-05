@@ -212,8 +212,7 @@ var Circle = {
   }
 };
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = Circle;
-module.exports = Circle; 
+Object.defineProperty(Circle, "__esModule", { 'value': true });
+Circle['default'] = Circle;
+Circle['Circle'] = Circle;
+module['exports'] = Circle;
