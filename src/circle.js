@@ -1,5 +1,5 @@
 /**
- * @license Circle.js v0.2.1 10/5/2024
+ * @license Circle.js v0.2.2 10/6/2024
  * https://github.com/rawify/Circle.js
  *
  * Copyright (c) 2024, Robert Eisele (https://raw.org/)

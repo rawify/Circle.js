@@ -212,5 +212,5 @@ var Circle = {
   }
 };
 export {
-  Circle as default
+  Circle as default, Circle
 };

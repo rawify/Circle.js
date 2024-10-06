@@ -1,7 +1,7 @@
 {
     "name": "circle.js",
     "title": "Circle.js",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "homepage": "https://github.com/rawify/Circle.js",
     "bugs": "https://github.com/rawify/Circle.js/issues",
     "description": "A function collection for working with circles",
@@ -52,7 +52,7 @@
         "test": "mocha tests/*.js"
     },
     "devDependencies": {
-        "crude-build": "^0.0.3",
+        "crude-build": "^0.0.4",
         "mocha": "*",
         "should": "*"
     }
