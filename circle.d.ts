@@ -12,7 +12,7 @@ interface Circle {
     r: number;
 }
 
-declare class Circle {
+export class Circle {
 
     /**
      * Determines if two circles intersect
@@ -110,4 +110,4 @@ declare class Circle {
     static fromThreePoints(p1: Point, p2: Point, p3: Point): Circle;
 }
 
-export { Circle as default };
+export default Circle;
