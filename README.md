@@ -8,7 +8,7 @@ Circle.js is a collection of functions to work with circles. The aim is to have 
 
 Every circle is defined by a cartesian point `(x, y)` and the radius `r`.
 
-Circles.js is analogous to [Rectangles.js](https://github.com/infusion/Rectangles.js) and [Angles.js](https://github.com/infusion/Angles.js).
+Circles.js is analogous to [Rectangles.js](https://github.com/infusion/Rectangles.js) and [Angles.js](https://github.com/rawify/Angles.js).
 
 ## Examples
 
@@ -72,22 +72,46 @@ Caclulates a circle {x, y, r} with given three {x, y} points
 
 ## Installation
 
-Installing Circle.js is as easy as cloning this repo or use one of the following command:
+You can install `Circle.js` via npm:
 
-```
+```bash
 npm install circle.js
 ```
 
+Or with yarn:
 
-## Using Circle.js with the browser
+```bash
+yarn add circle.js
+```
+
+Alternatively, download or clone the repository:
+
+```bash
+git clone https://github.com/rawify/Circle.js
+```
+
+## Usage
+
+Include the `circle.min.js` file in your project:
 
 ```html
-<script src="circle.min.js"></script>
+<script src="path/to/circle.min.js"></script>
 <script>
-console.log(Circle.center(A));
+  console.log(Circle.center(A));
 </script>
 ```
 
+Or in a Node.js project:
+
+```javascript
+const Circle = require('circle.js');
+```
+
+or 
+
+```javascript
+import Circle from 'circle.js';
+```
 
 
 ## Coding Style
